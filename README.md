@@ -24,41 +24,39 @@ _Ensuring the security of application source code is a critical step in modern s
   TBD-step-1-notes.
 -->
 
-## Welcome
+## Step 1: Enable CodeQL
 
-_Welcome to "Introduction to CodeQL"! :wave:_
+👋 Hello! Welcome to the GitHub Skills course: Enable code scanning! 
 
-In this course, we will explore using GitHub code scanning, powered by [CodeQL](https://codeql.github.com/), to identify common coding practices that can lead to security vulnerabilities. During this course, we will enable code scanning on your repository to identify, remediate, and prevent vulnerabilities.
+Let's get started!  
+
+In this first step, we'll be learning more about CodeQL and how to use it to secure your source code. 
+
+**What is GitHub code scanning**: _[Code scanning](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning)_ is a capability that allows development teams to integrate security testing tools into the software development process. This is done using GitHub Actions. With code scanning, you can integrate many different types of tools including SAST, container, and infrastructure as code security tools.
+
+**What is CodeQL**: _[CodeQL](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-with-codeql)_ is a static analysis testing tool that helps you identify security weaknesses such as SQL injection, cross-site scripting, and code injection issues.
+
+### :keyboard: Activity: Enable code scanning with CodeQL
   
-Code scanning is part of the [GitHub Advanced Security (GHAS)](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security) product suite. All of the features of Advanced Security are 100% free for open source, public repositories.
+First, we will enable code scanning with CodeQL in our repository.
 
-- **Who is this for**: Developers, security engineers, open source maintainers.
-- **What you'll learn**: We'll show you how to enable code scanning and identify SQL injection vulnerabilities with CodeQL.
-- **What you'll build**: A secure software development pipeline that allows you to identify and prevent new security vulnerabilities from being introduced into your production code.
-- **Prerequisites**: In this course, you'll need a baseline knowledge of GitHub concepts such as pull requests, GitHub Actions, and source code. You'll also need to be familiar with the concepts of Static Application Security Testing (SAST). Don't worry, we'll demistify the complex parts for you 🙂.
-- **How long**: This course is four steps long and takes less than 30 minutes to complete.
+1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
+2. Navigate to the **Settings** tab at the top of your newly created repository.
+3. Under the **Security** section on the left side, select **Code security and analysis**.
+4. Scroll down to the section titled **Code scanning**. For the purpose of this course, we will focus on CodeQL analysis.
+5. Click on the **Set up** dropdown menu and choose **Default**.
+![enable-code-scanning-default.png](/images/enable-code-scanning-default.png)
 
-## How to start this course
+Let's take a look at the configuration options in the modal:
+  
+  - **Languages to analyze:** These are the languages that will be scanned by CodeQL. In this case, we will be scanning in `Python`.  
+  - **Query suites:** CodeQL [queries](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-with-codeql#about-codeql-queries) are packaged in bundles called "suites". This section allows you to choose which query suite to use.  We'll leave this set as **Default** for this exercise. For more information, see "[About CodeQL queries](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-with-codeql#about-codeql-queries)." 
+  - **Events:** This section tells CodeQL when to scan. In this case, it's set to scan on any pull request to the `main` branch.
+    
+![codeql-default-configuration-box.png](/images/codeql-default-configuration-box.png)
 
-<!-- For start course, run in JavaScript:
-'https://github.com/new?' + new URLSearchParams({
-  template_owner: 'TBD-organization',
-  template_name: 'TBD-course-name',
-  owner: '@me',
-  name: 'TBD-organization-TBD-course-name',
-  description: 'My clone repository',
-  visibility: 'public',
-}).toString()
--->
-
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=introduction-to-codeql&owner=%40me&name=skills-introduction-to-codeql&description=GitHub+Skills:+Introduction+to+CodeQL&visibility=public)
-
-1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, most of the prompts will automatically fill in for you.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Scroll down and click the **Create repository** button at the bottom of the form.
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+6. Click **Enable CodeQL**
+7. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 <footer>
 
